@@ -8,6 +8,7 @@ class Character: # Create the class "character"(Father)
         self.weaknees = weaknees
         self.heal_items = [40,40] #Only two healing items per character
         self.life = 150 #maximum life
+
  #operation of the attack
     def attack(self, enemy): 
         damage = random.randint(5, 20)
@@ -33,3 +34,11 @@ class Character: # Create the class "character"(Father)
             print(f"{self.name} #has used a healing item and has healed  {healing} points of life.")
         else:
             print("No healing objets left.")
+#Characters
+class Chrono(Character): #Is the character we are going to use 
+    def __init__(self): #Funtion 
+        super().__init__("Chrono", "Warrior", "Wizard")# Name, strength and weakness 
+
+class Marle(Character):# She is the CPU
+    def __init__(self):
+        super().__init__("Marle", "Wizard", "Warrior") # Name, strength and weakness
