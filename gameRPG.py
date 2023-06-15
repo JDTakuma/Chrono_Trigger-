@@ -1,6 +1,6 @@
 import random
 
-class Character:
+class Character: # Create the class "character" 
     def __init__(self, name, strength, defense, healing_items):
         self.name = name
         self.strength = strength
