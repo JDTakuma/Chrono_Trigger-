@@ -7,19 +7,29 @@ class Character: # Create the class "character"(Father)
         self.strength = strength
         self.weaknees = weaknees
         self.heal_items = [40,40] #Only two healing items per character
-        self.life = 150
- 
-    def attack(self, enemy):
+        self.life = 150 #maximum life
+ #operation of the attack
+    def attack(self, enemy): 
         damage = random.randint(5, 20)
-        if enemy.weakness == self.strength:
-            damage *= 2
-            print("¡Effective attack!")
-        enemy.life -= damage
-        print(f"{self.name} attacks {enemy.name} does {damage} points of damage.")
+        #Implementation of weakness and strength
+        if enemy.weakness == self.strength: 
+            damage *= 2 # Only if the strength is the same that weakness
+            print("¡Effective attack!") # Indicates that the attack was effective
+        enemy.life -= damage 
+        print(f"{self.name} attacks {enemy.name} does {damage} points of damage.") #Result
 
-    def defend(self):
-        defense = random.randint(10, 20)
-        self.life += defense
-        if self.life > 100:
-            self.life = 100
+    def defend(self): #Funtion of defense 
+        defense = random.randint(10, 20) #Its more like a healing system 
+        self.life += defense 
+        if self.life > 150: 
+            self.life = 150 # The restored life cannot be greater than the maximum life of the character
         print(f"{self.name} has defended himself and healed {defense} points of life.")
+
+    def use_healing_item(self):
+        if self.healing_items:
+            healing = self.healing_items.pop(0) #Removes the element that is in the position
+            if self.health > 150:
+                self.health = 150 # The restored life cannot be greater than the maximum life of the character
+            print(f"{self.name} #has used a healing item and has healed  {healing} points of life.")
+        else:
+            print("No healing objets left.")
