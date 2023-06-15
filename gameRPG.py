@@ -1,7 +1,7 @@
 import random
 
 class Character: # Create the class "character"(Father) 
-    def __init__(self, name, strength, weaknees, healing_items):
+    def __init__(self, name, strength, weaknees, heal_items):
 #Characteristics for any character 
         self.name = name
         self.strength = strength
@@ -14,6 +14,12 @@ class Character: # Create the class "character"(Father)
         if enemy.weakness == self.strength:
             damage *= 2
             print("¡Effective attack!")
-        enemy.health -= damage
+        enemy.life -= damage
         print(f"{self.name} attacks {enemy.name} does {damage} points of damage.")
 
+    def defend(self):
+        defense = random.randint(10, 20)
+        self.life += defense
+        if self.life > 100:
+            self.life = 100
+        print(f"{self.name} se ha defendido y se ha curado {defense} puntos de vida.")
