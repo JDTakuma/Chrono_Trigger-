@@ -22,4 +22,4 @@ class Character: # Create the class "character"(Father)
         self.life += defense
         if self.life > 100:
             self.life = 100
-        print(f"{self.name} se ha defendido y se ha curado {defense} puntos de vida.")
+        print(f"{self.name} has defended himself and healed {defense} points of life.")
