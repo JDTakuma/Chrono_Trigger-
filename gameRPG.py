@@ -47,7 +47,7 @@ def main():# All features in two final objects
     player1 = Chrono()
     player2 = Marle()
 
-     while player1.life > 0 and player2.life > 0: #The condition for continuing to play the game (or finish the game)
+    while player1.life > 0 and player2.life > 0: #The condition for continuing to play the game (or finish the game)
        #Basic menu
         print("------")
         print(f"{player1.name} (Life: {player1.heal})")
