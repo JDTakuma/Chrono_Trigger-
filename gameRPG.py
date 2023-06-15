@@ -57,3 +57,12 @@ def main():# All features in two final objects
         print("2. Defend")
         print("3. Use a healing item") 
         choice = input("Choose a action : ") #Decide on one of the three actions 
+#Actions to choose i the basic menu 
+        if choice == "1":
+            player1.attack(player2) #Objetive to attack
+        elif choice == "2":
+            player1.defend()
+        elif choice == "3":
+            player1.use_healing_item()
+        else:
+            print("Invalid option. Try again.")
