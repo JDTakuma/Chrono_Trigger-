@@ -1,13 +1,19 @@
 import random
 
 class Character: # Create the class "character"(Father) 
-    def __init__(self, name, strength, defense, healing_items):
+    def __init__(self, name, strength, weaknees, healing_items):
 #Characteristics for any character 
         self.name = name
         self.strength = strength
-        self.defense = defense
-        self.healing_items = healing_items
+        self.weaknees = weaknees
+        self.heal_items = [40,40] #Only two healing items per character
+        self.life = 150
  
- def attack(self, target): #Define funtion of attack
-        damage = self.strength - target.defense #How the "attack" works is defined 
-        target.receive_damage(damage) #result of "strength minus defense"
+    def attack(self, enemy):
+        damage = random.randint(5, 20)
+        if enemy.weakness == self.strength:
+            damage *= 2
+            print("¡Effective attack!")
+        enemy.health -= damage
+        print(f"{self.name} attacks {enemy.name} does {damage} points of damage.")
+
